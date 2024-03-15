@@ -2,8 +2,8 @@
 
 namespace Araleeat\Trustpilot\Service;
 
-use GuzzleHttp\Psr7\Response;
 use Araleeat\Trustpilot\ClientTrustpilot;
+use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractService
@@ -42,35 +42,6 @@ abstract class AbstractService
             $endPoint = $this->replaceEndpointVariables($endPoint, $routeParts);
             return $this->client->getHttpClient()->request('POST', $endPoint, $options);
         } catch (\Exception $exception) {
-            error_log($exception->getMessage());
-            $message = new Response(
-                $exception->getCode(),
-                [
-                    'Content-Type' => 'application/json; charset=utf-8;'
-                ],
-                $exception->getMessage()
-            );
-
-            return $message;
-        }
-    }
-
-    /**
-     * @param string $endPoint
-     * @param array $routeParts
-     * @param array $queryParts
-     * @param array $options
-     * @return Response|ResponseInterface
-     * @throws
-     */
-    public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options = [])
-    {
-        try {
-            $endPoint = $this->replaceEndpointVariables($endPoint, $routeParts);
-            $endPoint = $this->combineQueryParts($endPoint, $queryParts);
-            return $this->client->getHttpClient()->request('GET', $endPoint, $options);
-        } catch (\Exception $exception) {
-            error_log($exception->getMessage());
             $message = new Response(
                 $exception->getCode(),
                 [
@@ -101,6 +72,33 @@ abstract class AbstractService
                 return $matches[0];
             }
         }, $endPoint);
+    }
+
+    /**
+     * @param string $endPoint
+     * @param array $routeParts
+     * @param array $queryParts
+     * @param array $options
+     * @return Response|ResponseInterface
+     * @throws
+     */
+    public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options = [])
+    {
+        try {
+            $endPoint = $this->replaceEndpointVariables($endPoint, $routeParts);
+            $endPoint = $this->combineQueryParts($endPoint, $queryParts);
+            return $this->client->getHttpClient()->request('GET', $endPoint, $options);
+        } catch (\Exception $exception) {
+            $message = new Response(
+                $exception->getCode(),
+                [
+                    'Content-Type' => 'application/json; charset=utf-8;'
+                ],
+                $exception->getMessage()
+            );
+
+            return $message;
+        }
     }
 
     /**

@@ -2,8 +2,8 @@
 
 namespace Araleeat\Trustpilot;
 
-use GuzzleHttp\Client as GuzzleClient;
 use Araleeat\Trustpilot\Exception\InvalidConfigurationException;
+use GuzzleHttp\Client as GuzzleClient;
 
 class ClientTrustpilot
 {

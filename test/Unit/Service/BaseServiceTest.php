@@ -10,9 +10,9 @@ class BaseServiceTest extends TestCase
     protected string $apikey = '';
     protected string $apiSecret = '';
 
-    protected string $businessUnitId = '62b050f0efa05fbf04326ec5';
+    protected string $businessUnitId = '';
 
-    protected string $accessToken = 'eCAjzwZ916dfnB1Mga1YCFrBpGKQ';
+    protected string $accessToken = '';
 
     public function setUp(): void
     {

@@ -144,9 +144,7 @@ class BusinessUnitsServiceTest extends BaseServiceTest
     {
         try {
             $query = [
-                'referralEmail' => 'junyi.han@uhomes.com',
-//                'language' => 'en-us',
-//                'referenceId'=>'customer1014982'
+                'language' => 'en-us',
             ];
             $options = [
                 'headers' => [
@@ -156,7 +154,6 @@ class BusinessUnitsServiceTest extends BaseServiceTest
             $client = new ClientTrustpilot($this->configuration);
             $service = new BusinessUnitsService($client);
             $result = $service->getBusinessUnitPrivateReviews($this->businessUnitId, $query, $options);
-            echo $result;die;
             $this->assertIsString($result);
             $this->assertStringContainsString($this->businessUnitId, $result);
         } catch (\Exception $e) {

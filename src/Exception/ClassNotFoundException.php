@@ -1,4 +1,5 @@
 <?php
+
 namespace Araleeat\Trustpilot\Exception;
 
 use Exception;

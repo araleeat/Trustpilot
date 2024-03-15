@@ -4,7 +4,6 @@ namespace Araleeat\Trustpilot\Tests\Unit\Service;
 
 use Araleeat\Trustpilot\ClientTrustpilot;
 use Araleeat\Trustpilot\Service\AuthenticationService;
-use Araleeat\Trustpilot\Service\BusinessSignupService;
 
 class AuthenticationServiceTest extends BaseServiceTest
 {
