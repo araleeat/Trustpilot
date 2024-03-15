@@ -10,5 +10,4 @@
 /app/phpunit.xml
 /phpunit.xml
 
-/vender/
-
+/vendor/
