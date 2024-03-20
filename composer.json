@@ -3,7 +3,7 @@
   "description": "PHP library for communication with the Trustpilot API",
   "type": "library",
   "homepage": "https://github.com/araleeat/trustpilot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "Trustpilot",
     "Trustpilot API",
