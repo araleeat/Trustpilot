@@ -3,7 +3,7 @@
   "description": "PHP library for communication with the Trustpilot API",
   "type": "library",
   "homepage": "https://github.com/araleeat/trustpilot",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "keywords": [
     "Trustpilot",
     "Trustpilot API",
@@ -18,8 +18,8 @@
   ],
   "require": {
     "php": ">=7.4",
-    "guzzlehttp/guzzle": "^6.3|^7.0",
-    "guzzlehttp/oauth-subscriber": "^0.3.0"
+    "guzzlehttp/guzzle": "^6.5|^7.2",
+    "guzzlehttp/oauth-subscriber": "^0.6"
   },
   "autoload": {
     "psr-4": {
